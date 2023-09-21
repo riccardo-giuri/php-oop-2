@@ -5,13 +5,15 @@ class Prodotto {
     private string $marca;
     private float $prezzo;
     private Animale $tipoAnimale;
+    private string $imageURL;
 
-    public function __construct(string $_nome, string $_marca, float $_prezzo, Animale $_tipoAnimale)
+    public function __construct(string $_nome, string $_marca, float $_prezzo, Animale $_tipoAnimale, string $_imageURL)
     {
         $this->nome = $_nome;
         $this->marca = $_marca;
         $this->prezzo = $_prezzo;
         $this->tipoAnimale = $_tipoAnimale;
+        $this->imageURL = $_imageURL;
     }
 
     public function getNome() {
@@ -44,5 +46,15 @@ class Prodotto {
 
     public function setTipoAnimale(Animale $value) {
         $this->tipoAnimale = $value;
+    }
+
+    public function getImageURL(): string
+    {
+        return $this->imageURL;
+    }
+
+    public function setImageURL(string $imageURL)
+    {
+        $this->imageURL = $imageURL;
     }
 }

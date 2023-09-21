@@ -1,3 +1,47 @@
+<?php 
+require_once __DIR__ . "/db.php";
+require_once __DIR__ . "/classes/Animale.php";
+require_once __DIR__ . "/classes/products/Prodotto.php";
+require_once __DIR__ . "/classes/products/Cibo.php";
+require_once __DIR__ . "/classes/products/Cucce.php";
+require_once __DIR__ . "/classes/products/Gioco.php";
+
+$listaProdotti = [];
+
+foreach($listaGiochi as $gioco) {
+    $listaProdotti[] = new Gioco(   
+        _nome: $gioco['nome'],
+        _marca: $gioco['marca'],
+        _prezzo: $gioco['prezzo'],
+        _tipoAnimale: $gioco['animale'],
+        _materiale: $gioco['materiale'],
+        _taglia: $gioco['taglia'],
+        _imageURL: $gioco['immagine']);
+};
+
+foreach($listaCibi as $cibo) {
+    $listaProdotti[] = new Cibo(   
+        _nome: $cibo['nome'],
+        _marca: $cibo['marca'],
+        _prezzo: $cibo['prezzo'],
+        _tipoAnimale: $cibo['animale'],
+        _peso: $cibo['peso'],
+        _gusto: $cibo['gusto'],
+        _imageURL: $cibo['immagine']);
+};
+
+foreach($listaCucce as $cuccia) {
+    $listaProdotti[] = new Cucce(   
+        _nome: $cuccia['nome'],
+        _marca: $cuccia['marca'],
+        _prezzo: $cuccia['prezzo'],
+        _tipoAnimale: $cuccia['animale'],
+        _materiale: $cuccia['materiale'],
+        _lunghezzaCM: $cuccia['lunghezza'],
+        _imageURL: $cuccia['immagine']);
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +54,18 @@
 </head>
 
 <body>
-    
+    <h1 class="text-center">E-Commerce</h1>
+
+    <div class="container">
+        <div class="row">
+            <?php foreach($listaProdotti as $prodotto) {?>
+
+            <div class="col-3 mb-4">
+                <?php $prodotto->printHTML() ?>
+            </div>
+
+            <?php } ?>
+        </div>
+    </div>
 </body>
 </html>

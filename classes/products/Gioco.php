@@ -1,26 +1,36 @@
 <?php 
 require_once __DIR__ . "/Prodotto.php";
 
-class Cucce extends Prodotto {
-    private float $lunghezzaCM;
+class Gioco extends Prodotto {
+    //costanti di taglia
+    const S = "S";
+    const M = "M";
+    const L = "L";
+    const XL = "XL";
+
+    //taglia
+    private string $taglia;
+
+    //materiale
     private string $materiale;
 
-    public function __construct(float $_lunghezzaCM, string $_materiale, string $_nome, string $_marca, float $_prezzo, Animale $_tipoAnimale, string $_imageURL) {
+
+    //getter and setters
+    public function __construct(string $_taglia, string $_materiale, string $_nome, string $_marca, float $_prezzo, Animale $_tipoAnimale, string $_imageURL) {
         parent::__construct($_nome, $_marca, $_prezzo, $_tipoAnimale, $_imageURL);
 
-        $this->lunghezzaCM = $_lunghezzaCM;
+        $this->taglia = $_taglia;
         $this->materiale = $_materiale;
     }
 
-    public function getLunghezzaCM(): float
+    public function getTaglia(): string
     {
-        return $this->lunghezzaCM;
+        return $this->taglia;
     }
 
-
-    public function setLunghezzaCM(float $lunghezzaCM)
+    public function setTaglia(string $taglia)
     {
-        $this->lunghezzaCM = $lunghezzaCM;
+        $this->taglia = $taglia;
     }
 
     public function getMateriale(): string
@@ -31,12 +41,13 @@ class Cucce extends Prodotto {
     public function setMateriale(string $materiale)
     {
         $this->materiale = $materiale;
-
     }
+
+    //metodi di classe
 
     public function printHTML() {
         ?>
-        <div class="card">
+        <div class="card h-100">
             <img src=<?php echo $this->getImageURL()?>  alt="" class="card-img-top">
 
             <div class="card-body fs-5">
@@ -48,7 +59,7 @@ class Cucce extends Prodotto {
                     <span class="card-text">Animale: <?php echo $this->getTipoAnimale()->getNome()?></span>
                     <?php echo $this->getTipoAnimale()->getIcona()?>
                 </div>
-                <div class="card-text">Lunghezza: <?php echo $this->getLunghezzaCM()?>cm</div>
+                <div class="card-text">Taglia: <?php echo $this->getTaglia()?></div>
             </div>
         </div>
         <?php
