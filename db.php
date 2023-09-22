@@ -15,7 +15,8 @@ $listaGiochi = [
         'materiale' => 'plastica',
         'taglia' => Gioco::S,
         'animale' => $listaAnimali['cane'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/256590/kong-classic1.jpg?v=1781655282'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/256590/kong-classic1.jpg?v=1781655282',
+        'sconto' => 15
     ],
     [
         'nome' => 'Dog Activity Snack Roll',
@@ -24,7 +25,8 @@ $listaGiochi = [
         'materiale' => 'plastica',
         'taglia' => Gioco::M,
         'animale' => $listaAnimali['gatto'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/218387/https---www.arcaplanet.it-media-catalog-product--t-r-trixie-dog-activity-snack-roll-in-plastica-gomma-naturale-6-5-x-14-cm-tric91.jpg?v=1780726572'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/218387/https---www.arcaplanet.it-media-catalog-product--t-r-trixie-dog-activity-snack-roll-in-plastica-gomma-naturale-6-5-x-14-cm-tric91.jpg?v=1780726572',
+        'sconto' => 20
     ],
 ];
 
@@ -36,7 +38,8 @@ $listaCibi = [
         'gusto' => 'salmone',
         'peso' => 12,
         'animale' => $listaAnimali['cane'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=1781698282'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/270797/Monge-All-Breeds-Adult-Salmone-e-Riso-12Kg.jpg?v=1781698282',
+        'sconto' => 50
     ],
     [
         'nome' => 'Monge Maxi Adult Ricco di Pollo',
@@ -45,7 +48,8 @@ $listaCibi = [
         'gusto' => 'pollo',
         'peso' => 10,
         'animale' => $listaAnimali['cane'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/224355/monge-cane-adult-maxi-pollo.jpg?v=1781693398'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/224355/monge-cane-adult-maxi-pollo.jpg?v=1781693398',
+        'sconto' => 0
     ],
 ];
 
@@ -57,7 +61,8 @@ $listaCucce = [
         'materiale' => 'cotone',
         'lunghezza' => 45,
         'animale' => $listaAnimali['gatto'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/260147/LD264---LD265---LD266---LD267---LD268--5-.jpg?v=1781655528'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/260147/LD264---LD265---LD266---LD267---LD268--5-.jpg?v=1781655528',
+        'sconto' => 5
     ],
     [
         'nome' => 'Cuccia Poker Indi',
@@ -66,6 +71,7 @@ $listaCucce = [
         'materiale' => 'cotone',
         'lunghezza' => 60,
         'animale' => $listaAnimali['cane'],
-        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/273273/LOVEDI-CUCCIA-POKER-INDI-CM.53X53X23.jpg?v=1781647628'
+        'immagine' => 'https://arcaplanet.vtexassets.com/arquivos/ids/273273/LOVEDI-CUCCIA-POKER-INDI-CM.53X53X23.jpg?v=1781647628',
+        'sconto' => 15
     ],
 ];

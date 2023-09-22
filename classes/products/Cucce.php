@@ -42,7 +42,8 @@ class Cucce extends Prodotto {
             <div class="card-body fs-5">
                 <h5 class="card-text">Prodotto: <?php echo $this->getNome()?></h5>
                 <div class="card-text">Marca: <?php echo $this->getMarca()?></div>
-                <div class="card-text">Prezzo: <?php echo $this->getPrezzo()?>€</div>
+                <div class="card-text">Sconto: <?php echo $this->getDiscountPercentage()?>%</div>
+                <div class="card-text">Prezzo: <?php echo $this->getDiscountedPrice()?>€</div>
                 <div class="card-text">Materiale: <?php echo $this->getMateriale()?></div>
                 <div>
                     <span class="card-text">Animale: <?php echo $this->getTipoAnimale()->getNome()?></span>

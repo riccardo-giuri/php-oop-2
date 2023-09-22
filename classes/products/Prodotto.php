@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/../../traits/HasSconto.php";
 
 class Prodotto {
     private string $nome;
@@ -6,6 +7,8 @@ class Prodotto {
     private float $prezzo;
     private Animale $tipoAnimale;
     private string $imageURL;
+
+    use HasSconto;
 
     public function __construct(string $_nome, string $_marca, float $_prezzo, Animale $_tipoAnimale, string $_imageURL)
     {

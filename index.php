@@ -9,7 +9,7 @@ require_once __DIR__ . "/classes/products/Gioco.php";
 $listaProdotti = [];
 
 foreach($listaGiochi as $gioco) {
-    $listaProdotti[] = new Gioco(   
+    $newGame = new Gioco(   
         _nome: $gioco['nome'],
         _marca: $gioco['marca'],
         _prezzo: $gioco['prezzo'],
@@ -17,10 +17,19 @@ foreach($listaGiochi as $gioco) {
         _materiale: $gioco['materiale'],
         _taglia: $gioco['taglia'],
         _imageURL: $gioco['immagine']);
+
+    try {
+        $newGame->applySconto($newGame->getPrezzo(), $gioco['sconto']);
+    }
+    catch(Exception $e) {
+        echo 'Eccezione:' . $e->getMessage();
+    } 
+    
+    $listaProdotti[] = $newGame;
 };
 
 foreach($listaCibi as $cibo) {
-    $listaProdotti[] = new Cibo(   
+    $newCibo = new Cibo(   
         _nome: $cibo['nome'],
         _marca: $cibo['marca'],
         _prezzo: $cibo['prezzo'],
@@ -28,10 +37,20 @@ foreach($listaCibi as $cibo) {
         _peso: $cibo['peso'],
         _gusto: $cibo['gusto'],
         _imageURL: $cibo['immagine']);
+
+    try {
+        $newCibo->applySconto($newCibo->getPrezzo(), $cibo['sconto']);
+    }
+    catch(Exception $e) {
+        echo 'Eccezione:' . $e->getMessage();
+    } 
+
+    $listaProdotti[] = $newCibo;
 };
 
 foreach($listaCucce as $cuccia) {
-    $listaProdotti[] = new Cucce(   
+    
+    $newCuccia = new Cucce(   
         _nome: $cuccia['nome'],
         _marca: $cuccia['marca'],
         _prezzo: $cuccia['prezzo'],
@@ -39,6 +58,14 @@ foreach($listaCucce as $cuccia) {
         _materiale: $cuccia['materiale'],
         _lunghezzaCM: $cuccia['lunghezza'],
         _imageURL: $cuccia['immagine']);
+
+    try{
+        $newCuccia->applySconto($newCuccia->getPrezzo(), $cuccia['sconto']);
+    }catch(Exception $e) {
+        echo 'Eccezione:' . $e->getMessage();
+    }
+
+    $listaProdotti[] = $newCuccia;
 };
 ?>
 
